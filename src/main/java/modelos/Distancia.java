@@ -17,12 +17,10 @@ public class Distancia implements EntidadeBase{
     
     @ManyToOne
     @JoinColumn(name = "origem_id", nullable = false)
-    @Column(nullable = false)
     private Cidade origem;
 
     @ManyToOne
-     @JoinColumn(name = "destino_id", nullable = false)
-    @Column(nullable = false)
+    @JoinColumn(name = "destino_id", nullable = false)
     private Cidade destino;
 
     @Override

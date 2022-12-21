@@ -38,7 +38,6 @@ public class Frete implements EntidadeBase{
     @JoinColumn(name = "categoria_frete_id", nullable = false)
     private CategoriaFrete categoriaFrete;
     
-    private Parametro parametro;
     
     @ManyToOne
     @JoinColumn(name = "cidade_origem_id", nullable = false)
@@ -46,9 +45,11 @@ public class Frete implements EntidadeBase{
     
     @ManyToOne
     @JoinColumn(name = "cidade_destino_id", nullable = false)
-    @Column(nullable = false)
     private Cidade cidadeDestino;
-
+    
+    @Embedded
+    private Parametro parametro;
+    
     public Frete(String codigo, Double valor, String numeroNotaFiscal, Parametro parametro) {
         this.codigo = codigo;
         this.valor = valor;

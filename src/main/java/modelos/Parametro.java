@@ -7,22 +7,10 @@ import javax.persistence.*;
  *
  * @author Daniel Lima & Kim Costa
  */
-@Entity
-public class Parametro implements EntidadeBase{
-    
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+@Embeddable
+public class Parametro {
     
     private Double valorKmRodado;
-
-    @Override
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
 
     public Double getValorKmRodado() {
         return valorKmRodado;
